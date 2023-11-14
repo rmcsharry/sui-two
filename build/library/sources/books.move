@@ -1,4 +1,4 @@
-module library::book {
+module library::books {
   use std::option::{Self, Option};
   use std::string::{Self, String};
   
@@ -58,7 +58,7 @@ module library::book {
     library: &mut Library,
     ctx: &mut TxContext
   ) {
-      let value= coin::value(&payment);
+      let value = coin::value(&payment);
       assert!(value == MIN_BOOK_COST, INSUFFICIENT_FUNDS);
       transfer::public_transfer(payment, library.owner);
 
